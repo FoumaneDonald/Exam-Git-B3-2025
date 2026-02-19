@@ -1,0 +1,21 @@
+name: Deploiement
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Message de début
+        run: echo "Debut du déploiement"
+
+      - name: Afficher le contenu du secret
+        run: |
+          echo "Le token de déploiement est : ${{ secrets.DEPLOY_TOKEN }}"
+
+      - name: Message de fin
+        run: echo "Déploiement terminé par [Akamba Donald]"
